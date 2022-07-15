@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/playerball.tres" type="ArrayMesh" id=1]
+
+[sub_resource type="BoxShape" id=1]
+
+[node name="Player" type="KinematicBody"]
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0.000629698, -0.000142524, -0.000629699, 1, -1.37024e-05, 0.000142517, 1.37793e-05, 1, 0, 0, 0 )
+mesh = ExtResource( 1 )
+material/0 = null

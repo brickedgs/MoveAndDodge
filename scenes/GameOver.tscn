@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://fonts/Redkost Comic.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://fonts/Some Time Later.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://scripts/ButtonPlayAgain.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 90
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 72
+font_data = ExtResource( 1 )
+
+[node name="GameOver" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_top = 123.0
+margin_right = 1024.0
+margin_bottom = 235.0
+theme = SubResource( 2 )
+custom_colors/font_color = Color( 0.917647, 0.109804, 0.109804, 1 )
+custom_colors/font_color_shadow = Color( 0.376471, 0.054902, 0.054902, 1 )
+custom_constants/shadow_offset_x = 7
+custom_constants/shadow_offset_y = 7
+text = "Game Over"
+align = 1
+valign = 1
+
+[node name="ButtonPlayAgain" type="Button" parent="."]
+margin_left = 313.0
+margin_top = 372.0
+margin_right = 713.0
+margin_bottom = 454.0
+custom_colors/font_color = Color( 0, 0.501961, 0.843137, 1 )
+custom_colors/font_color_hover = Color( 0.909804, 0.584314, 0.196078, 1 )
+custom_colors/font_color_pressed = Color( 0.6, 0.027451, 0.6, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Play Again"
+flat = true
+script = ExtResource( 3 )
+
+[connection signal="pressed" from="ButtonPlayAgain" to="ButtonPlayAgain" method="_on_button_play_again_pressed"]
