@@ -18,3 +18,7 @@ func _ready():
 
 func _on_button_play_again_pressed():
 	get_tree().change_scene("res://scenes/Level.tscn")
+
+
+func _on_button_main_menu_pressed():
+	get_tree().change_scene("res://scenes/menu.tscn")

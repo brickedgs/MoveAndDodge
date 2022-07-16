@@ -12,11 +12,19 @@ config_version=4
 
 config/name="MoveAndDodge"
 run/main_scene="res://scenes/menu.tscn"
+boot_splash/image="res://splash.png"
 config/icon="res://icon.png"
+config/windows_native_icon="res://assets/icon.ico"
 
 [display]
 
 window/size/resizable=false
+
+[global]
+
+windo=false
+windows=false
+window=false
 
 [input]
 

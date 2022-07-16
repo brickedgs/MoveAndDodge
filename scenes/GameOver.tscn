@@ -38,10 +38,10 @@ align = 1
 valign = 1
 
 [node name="ButtonPlayAgain" type="Button" parent="."]
-margin_left = 313.0
-margin_top = 372.0
-margin_right = 713.0
-margin_bottom = 454.0
+margin_left = 317.0
+margin_top = 370.0
+margin_right = 717.0
+margin_bottom = 452.0
 custom_colors/font_color = Color( 0, 0.501961, 0.843137, 1 )
 custom_colors/font_color_hover = Color( 0.909804, 0.584314, 0.196078, 1 )
 custom_colors/font_color_pressed = Color( 0.6, 0.027451, 0.6, 1 )
@@ -50,4 +50,18 @@ text = "Play Again"
 flat = true
 script = ExtResource( 3 )
 
+[node name="ButtonMainMenu" type="Button" parent="."]
+margin_left = 316.0
+margin_top = 478.0
+margin_right = 716.0
+margin_bottom = 560.0
+custom_colors/font_color = Color( 0.831373, 0.196078, 0.196078, 1 )
+custom_colors/font_color_hover = Color( 0.909804, 0.584314, 0.196078, 1 )
+custom_colors/font_color_pressed = Color( 0.6, 0.027451, 0.6, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Main Menu"
+flat = true
+script = ExtResource( 3 )
+
 [connection signal="pressed" from="ButtonPlayAgain" to="ButtonPlayAgain" method="_on_button_play_again_pressed"]
+[connection signal="pressed" from="ButtonMainMenu" to="ButtonPlayAgain" method="_on_button_main_menu_pressed"]

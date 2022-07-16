@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/Player.gd" type="Script" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://textures/TactilePaving002_2K_Roughness.jpg" type="Texture" id=5]
 [ext_resource path="res://assets/blocks.tres" type="MeshLibrary" id=6]
 [ext_resource path="res://scenes/enemy.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/coin.tscn" type="PackedScene" id=8]
+[ext_resource path="res://fonts/Redkost Comic.otf" type="DynamicFontData" id=9]
+[ext_resource path="res://assets/hud_coin.png" type="Texture" id=10]
+[ext_resource path="res://scripts/Counter.gd" type="Script" id=11]
 
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 15, 1, 15 )
@@ -850,6 +854,14 @@ tracks/1/keys = {
 "values": [ Vector3( 0, 0, 0 ) ]
 }
 
+[sub_resource type="DynamicFont" id=34]
+size = 42
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=35]
+size = 64
+font_data = ExtResource( 9 )
+
 [node name="Level" type="Spatial"]
 
 [node name="Floor" type="StaticBody" parent="."]
@@ -957,9 +969,150 @@ anims/EnemyAnimation5 = SubResource( 31 )
 anims/EnemyAnimation6 = SubResource( 32 )
 anims/RESET = SubResource( 33 )
 
+[node name="Coins" type="Spatial" parent="."]
+
+[node name="holder1" type="Spatial" parent="Coins"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1286, 1.75169, -8.02456 )
+
+[node name="Coin" parent="Coins/holder1" instance=ExtResource( 8 )]
+
+[node name="holder2" type="Spatial" parent="Coins"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55156, 1.75169, -12.2169 )
+
+[node name="Coin" parent="Coins/holder2" instance=ExtResource( 8 )]
+
+[node name="holder3" type="Spatial" parent="Coins"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4871, 1.75169, -12.2169 )
+
+[node name="Coin" parent="Coins/holder3" instance=ExtResource( 8 )]
+
+[node name="holder4" type="Spatial" parent="Coins"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9364, 1.75169, -12.2169 )
+
+[node name="Coin" parent="Coins/holder4" instance=ExtResource( 8 )]
+
+[node name="holder5" type="Spatial" parent="Coins"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.24386, 1.75169, -4.10141 )
+
+[node name="Coin" parent="Coins/holder5" instance=ExtResource( 8 )]
+
+[node name="holder6" type="Spatial" parent="Coins"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7056, 1.75169, -3.33217 )
+
+[node name="Coin" parent="Coins/holder6" instance=ExtResource( 8 )]
+
+[node name="holder7" type="Spatial" parent="Coins"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.9486, 1.75169, -0.332124 )
+
+[node name="Coin" parent="Coins/holder7" instance=ExtResource( 8 )]
+
+[node name="holder8" type="Spatial" parent="Coins"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.33318, 1.75169, 8.82187 )
+
+[node name="Coin" parent="Coins/holder8" instance=ExtResource( 8 )]
+
+[node name="holder9" type="Spatial" parent="Coins"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.64081, 1.75169, 7.24492 )
+
+[node name="Coin" parent="Coins/holder9" instance=ExtResource( 8 )]
+
+[node name="holder10" type="Spatial" parent="Coins"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.85937, 1.75169, 7.24492 )
+
+[node name="Coin" parent="Coins/holder10" instance=ExtResource( 8 )]
+
+[node name="holder11" type="Spatial" parent="Coins"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.66703, 1.75169, 11.4758 )
+
+[node name="Coin" parent="Coins/holder11" instance=ExtResource( 8 )]
+
+[node name="holder12" type="Spatial" parent="Coins"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6794, 1.75169, 3.47563 )
+
+[node name="Coin" parent="Coins/holder12" instance=ExtResource( 8 )]
+
+[node name="holder13" type="Spatial" parent="Coins"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.064, 1.75169, -4.37065 )
+
+[node name="Coin" parent="Coins/holder13" instance=ExtResource( 8 )]
+
+[node name="holder14" type="Spatial" parent="Coins"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5551, 1.75169, 12.3198 )
+
+[node name="Coin" parent="Coins/holder14" instance=ExtResource( 8 )]
+
+[node name="Control" type="Control" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="Sprite" type="Sprite" parent="Control"]
+position = Vector2( 851.25, 61.25 )
+scale = Vector2( 0.141, 0.141 )
+texture = ExtResource( 10 )
+
+[node name="x" type="Label" parent="Control"]
+margin_left = 892.25
+margin_top = 41.25
+margin_right = 932.25
+margin_bottom = 92.25
+custom_colors/font_color = Color( 0.878431, 0.870588, 0.0588235, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+custom_fonts/font = SubResource( 34 )
+text = "x"
+align = 1
+valign = 1
+
+[node name="Counter" type="Label" parent="Control"]
+margin_left = 938.0
+margin_top = 31.0
+margin_right = 998.0
+margin_bottom = 99.0
+custom_colors/font_color = Color( 0.878431, 0.870588, 0.0588235, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+custom_fonts/font = SubResource( 35 )
+text = "N"
+align = 1
+valign = 1
+script = ExtResource( 11 )
+
+[node name="Timer" type="Timer" parent="Control/Counter"]
+
 [connection signal="body_entered" from="Enemy1" to="Player" method="_on_enemy_body_entered"]
 [connection signal="body_entered" from="Enemy2" to="Player" method="_on_enemy_body_entered"]
 [connection signal="body_entered" from="Enemy3" to="Player" method="_on_enemy_body_entered"]
 [connection signal="body_entered" from="Enemy4" to="Player" method="_on_enemy_body_entered"]
 [connection signal="body_entered" from="Enemy5" to="Player" method="_on_enemy_body_entered"]
 [connection signal="body_entered" from="Enemy6" to="Player" method="_on_enemy_body_entered"]
+[connection signal="body_entered" from="Coins/holder1/Coin" to="Coins/holder1/Coin" method="_on_coin_body_entered"]
+[connection signal="collected" from="Coins/holder1/Coin" to="Control/Counter" method="_on_coin_collected"]
+[connection signal="body_entered" from="Coins/holder2/Coin" to="Coins/holder2/Coin" method="_on_coin_body_entered"]
+[connection signal="collected" from="Coins/holder2/Coin" to="Control/Counter" method="_on_coin_collected"]
+[connection signal="body_entered" from="Coins/holder3/Coin" to="Coins/holder3/Coin" method="_on_coin_body_entered"]
+[connection signal="collected" from="Coins/holder3/Coin" to="Control/Counter" method="_on_coin_collected"]
+[connection signal="body_entered" from="Coins/holder4/Coin" to="Coins/holder4/Coin" method="_on_coin_body_entered"]
+[connection signal="collected" from="Coins/holder4/Coin" to="Control/Counter" method="_on_coin_collected"]
+[connection signal="body_entered" from="Coins/holder5/Coin" to="Coins/holder5/Coin" method="_on_coin_body_entered"]
+[connection signal="collected" from="Coins/holder5/Coin" to="Control/Counter" method="_on_coin_collected"]
+[connection signal="body_entered" from="Coins/holder6/Coin" to="Coins/holder6/Coin" method="_on_coin_body_entered"]
+[connection signal="collected" from="Coins/holder6/Coin" to="Control/Counter" method="_on_coin_collected"]
+[connection signal="body_entered" from="Coins/holder7/Coin" to="Coins/holder7/Coin" method="_on_coin_body_entered"]
+[connection signal="collected" from="Coins/holder7/Coin" to="Control/Counter" method="_on_coin_collected"]
+[connection signal="body_entered" from="Coins/holder8/Coin" to="Coins/holder8/Coin" method="_on_coin_body_entered"]
+[connection signal="collected" from="Coins/holder8/Coin" to="Control/Counter" method="_on_coin_collected"]
+[connection signal="body_entered" from="Coins/holder9/Coin" to="Coins/holder9/Coin" method="_on_coin_body_entered"]
+[connection signal="collected" from="Coins/holder9/Coin" to="Control/Counter" method="_on_coin_collected"]
+[connection signal="body_entered" from="Coins/holder10/Coin" to="Coins/holder10/Coin" method="_on_coin_body_entered"]
+[connection signal="collected" from="Coins/holder10/Coin" to="Control/Counter" method="_on_coin_collected"]
+[connection signal="body_entered" from="Coins/holder11/Coin" to="Coins/holder11/Coin" method="_on_coin_body_entered"]
+[connection signal="collected" from="Coins/holder11/Coin" to="Control/Counter" method="_on_coin_collected"]
+[connection signal="body_entered" from="Coins/holder12/Coin" to="Coins/holder12/Coin" method="_on_coin_body_entered"]
+[connection signal="collected" from="Coins/holder12/Coin" to="Control/Counter" method="_on_coin_collected"]
+[connection signal="body_entered" from="Coins/holder13/Coin" to="Coins/holder13/Coin" method="_on_coin_body_entered"]
+[connection signal="collected" from="Coins/holder13/Coin" to="Control/Counter" method="_on_coin_collected"]
+[connection signal="body_entered" from="Coins/holder14/Coin" to="Coins/holder14/Coin" method="_on_coin_body_entered"]
+[connection signal="collected" from="Coins/holder14/Coin" to="Control/Counter" method="_on_coin_collected"]
+[connection signal="timeout" from="Control/Counter/Timer" to="Control/Counter" method="_on_timer_timeout"]
