@@ -1049,14 +1049,14 @@ margin_right = 1024.0
 margin_bottom = 600.0
 
 [node name="Sprite" type="Sprite" parent="Control"]
-position = Vector2( 851.25, 61.25 )
+position = Vector2( 775.25, 61.25 )
 scale = Vector2( 0.141, 0.141 )
 texture = ExtResource( 10 )
 
 [node name="x" type="Label" parent="Control"]
-margin_left = 892.25
+margin_left = 816.25
 margin_top = 41.25
-margin_right = 932.25
+margin_right = 856.25
 margin_bottom = 92.25
 custom_colors/font_color = Color( 0.878431, 0.870588, 0.0588235, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -1068,16 +1068,16 @@ align = 1
 valign = 1
 
 [node name="Counter" type="Label" parent="Control"]
-margin_left = 938.0
+margin_left = 871.0
 margin_top = 31.0
-margin_right = 998.0
+margin_right = 1014.0
 margin_bottom = 99.0
 custom_colors/font_color = Color( 0.878431, 0.870588, 0.0588235, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 3
 custom_fonts/font = SubResource( 35 )
-text = "N"
+text = "N/n"
 align = 1
 valign = 1
 script = ExtResource( 11 )
@@ -1096,31 +1096,45 @@ autoplay = true
 [connection signal="body_entered" from="Enemy5" to="Player" method="_on_enemy_body_entered"]
 [connection signal="body_entered" from="Enemy6" to="Player" method="_on_enemy_body_entered"]
 [connection signal="body_entered" from="Coins/holder1/Coin" to="Coins/holder1/Coin" method="_on_coin_body_entered"]
+[connection signal="collected" from="Coins/holder1/Coin" to="." method="_on_coin_collected"]
 [connection signal="collected" from="Coins/holder1/Coin" to="Control/Counter" method="_on_coin_collected"]
 [connection signal="body_entered" from="Coins/holder2/Coin" to="Coins/holder2/Coin" method="_on_coin_body_entered"]
+[connection signal="collected" from="Coins/holder2/Coin" to="." method="_on_coin_collected"]
 [connection signal="collected" from="Coins/holder2/Coin" to="Control/Counter" method="_on_coin_collected"]
 [connection signal="body_entered" from="Coins/holder3/Coin" to="Coins/holder3/Coin" method="_on_coin_body_entered"]
+[connection signal="collected" from="Coins/holder3/Coin" to="." method="_on_coin_collected"]
 [connection signal="collected" from="Coins/holder3/Coin" to="Control/Counter" method="_on_coin_collected"]
 [connection signal="body_entered" from="Coins/holder4/Coin" to="Coins/holder4/Coin" method="_on_coin_body_entered"]
+[connection signal="collected" from="Coins/holder4/Coin" to="." method="_on_coin_collected"]
 [connection signal="collected" from="Coins/holder4/Coin" to="Control/Counter" method="_on_coin_collected"]
 [connection signal="body_entered" from="Coins/holder5/Coin" to="Coins/holder5/Coin" method="_on_coin_body_entered"]
+[connection signal="collected" from="Coins/holder5/Coin" to="." method="_on_coin_collected"]
 [connection signal="collected" from="Coins/holder5/Coin" to="Control/Counter" method="_on_coin_collected"]
 [connection signal="body_entered" from="Coins/holder6/Coin" to="Coins/holder6/Coin" method="_on_coin_body_entered"]
+[connection signal="collected" from="Coins/holder6/Coin" to="." method="_on_coin_collected"]
 [connection signal="collected" from="Coins/holder6/Coin" to="Control/Counter" method="_on_coin_collected"]
 [connection signal="body_entered" from="Coins/holder7/Coin" to="Coins/holder7/Coin" method="_on_coin_body_entered"]
+[connection signal="collected" from="Coins/holder7/Coin" to="." method="_on_coin_collected"]
 [connection signal="collected" from="Coins/holder7/Coin" to="Control/Counter" method="_on_coin_collected"]
 [connection signal="body_entered" from="Coins/holder8/Coin" to="Coins/holder8/Coin" method="_on_coin_body_entered"]
+[connection signal="collected" from="Coins/holder8/Coin" to="." method="_on_coin_collected"]
 [connection signal="collected" from="Coins/holder8/Coin" to="Control/Counter" method="_on_coin_collected"]
 [connection signal="body_entered" from="Coins/holder9/Coin" to="Coins/holder9/Coin" method="_on_coin_body_entered"]
+[connection signal="collected" from="Coins/holder9/Coin" to="." method="_on_coin_collected"]
 [connection signal="collected" from="Coins/holder9/Coin" to="Control/Counter" method="_on_coin_collected"]
 [connection signal="body_entered" from="Coins/holder10/Coin" to="Coins/holder10/Coin" method="_on_coin_body_entered"]
+[connection signal="collected" from="Coins/holder10/Coin" to="." method="_on_coin_collected"]
 [connection signal="collected" from="Coins/holder10/Coin" to="Control/Counter" method="_on_coin_collected"]
 [connection signal="body_entered" from="Coins/holder11/Coin" to="Coins/holder11/Coin" method="_on_coin_body_entered"]
+[connection signal="collected" from="Coins/holder11/Coin" to="." method="_on_coin_collected"]
 [connection signal="collected" from="Coins/holder11/Coin" to="Control/Counter" method="_on_coin_collected"]
 [connection signal="body_entered" from="Coins/holder12/Coin" to="Coins/holder12/Coin" method="_on_coin_body_entered"]
+[connection signal="collected" from="Coins/holder12/Coin" to="." method="_on_coin_collected"]
 [connection signal="collected" from="Coins/holder12/Coin" to="Control/Counter" method="_on_coin_collected"]
 [connection signal="body_entered" from="Coins/holder13/Coin" to="Coins/holder13/Coin" method="_on_coin_body_entered"]
+[connection signal="collected" from="Coins/holder13/Coin" to="." method="_on_coin_collected"]
 [connection signal="collected" from="Coins/holder13/Coin" to="Control/Counter" method="_on_coin_collected"]
 [connection signal="body_entered" from="Coins/holder14/Coin" to="Coins/holder14/Coin" method="_on_coin_body_entered"]
+[connection signal="collected" from="Coins/holder14/Coin" to="." method="_on_coin_collected"]
 [connection signal="collected" from="Coins/holder14/Coin" to="Control/Counter" method="_on_coin_collected"]
 [connection signal="timeout" from="Control/Counter/Timer" to="Control/Counter" method="_on_timer_timeout"]

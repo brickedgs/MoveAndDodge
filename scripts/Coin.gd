@@ -10,7 +10,7 @@ func _physics_process(delta):
 
 
 func _on_coin_body_entered(body):
-	if body.name == 'Player':
+	if body.name == 'Player' && self.get_parent().visible:
 		$AnimationPlayer.play("bounce")
 		$Timer.start()
 		$SFXCoin.play()
@@ -18,5 +18,4 @@ func _on_coin_body_entered(body):
 
 func _on_timer_timeout():
 	emit_signal("collected")
-	# $SFXCoin.stop()
 	queue_free()
